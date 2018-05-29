@@ -2,4 +2,4 @@
 
 //export default Users;
 
-export * from './user.route';
+export * from './user.routes';
