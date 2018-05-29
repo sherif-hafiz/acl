@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+import { UserController } from "../controller/user.controller";
 
 // Assign router to the express.Router() instance
 const router: Router = Router();
@@ -8,7 +9,8 @@ const router: Router = Router();
 // In this case it's /welcome
 router.get('/', (req: Request, res: Response) => {
     // Reply with a hello world when no name param is provided
-    res.send('Hello, World!');
+    //res.send('Hello, World!');
+    UserController.addUser(req, res);
 });
 
 router.get('/:name', (req: Request, res: Response) => {
