@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { UserController } from "../controller/user.controller";
+import { UserController } from "../controllers/user.controllers";
 
 // Assign router to the express.Router() instance
 const router: Router = Router();
@@ -13,12 +13,13 @@ router.get('/', (req: Request, res: Response) => {
     UserController.addUser(req, res);
 });
 
-router.get('/:name', (req: Request, res: Response) => {
+router.get('/:id', (req: Request, res: Response) => {
     // Extract the name from the request parameters
-    let { name } = req.params;
+    //let { id } = req.params;
 
     // Greet the given name
-    res.send(`Hello, ${name}`);
+    //res.send(`Hello, ${id}`);
+    UserController.getUserByID(req, res);
 });
 
 // Export the express.Router() instance to be used by server.ts
