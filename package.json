@@ -9,7 +9,7 @@
     "start:dev": "nodemon --inspect=0.0.0.0:9229 dist/index.js",
     "build": "tsc",
     "build:watch": "tsc -w",
-    "test": "mocha --compilers ts:ts-node/register tests/**/*.test.ts"
+    "test": "mocha --opts mocha.opts"
   },
   "repository": {
     "type": "git",
