@@ -1,7 +1,8 @@
 
 import express from "express";
 import * as bodyParser from "body-parser";
-import { UserRouter } from './routes';
+//import { UserRouter } from './routes';
+import router from './routes';
 
 
 class App {
@@ -15,6 +16,8 @@ class App {
 
     }
 
+    // Note: This is more likely to be removed in favour of the approach highlighted in this 
+    // article http://withjavascript.com/blog/tdd-a-restful-api-with-node-express-typescript-and-jest-part-1
     private config(): void {
         // support application/json type post data
         this.app.use(bodyParser.json());
@@ -23,7 +26,8 @@ class App {
         this.app.get("/", (req, res) => {
             res.send(`NODE_ENV=${process.env.NODE_ENV}`);
         });
-        this.app.use('/user', UserRouter);
+        //this.app.use('/user', UserRouter);
+        router(this.app);
 
     }
 
