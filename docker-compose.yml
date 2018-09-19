@@ -12,3 +12,5 @@ services:
     image: postgres:9.6.8-alpine
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: developer
+      POSTGRES_DB: api
