@@ -14,3 +14,9 @@ I've put together an article which explains most of the code from this repo: [Do
 
 Don't keep `.env` file in the repo. It's here as it makes demo example simpler.
 
+Note
+
+When updating the package.json you need to build the dependency `npm run-script build`
+
+$ ./node_modules/.bin/tsc --target es6 --moduleResolution node  t.ts
+
